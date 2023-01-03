@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generater</title>
+
+</head>
+
+
+
+<style>
+
+
+.wrapper {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  background-color: #DCD7E0;
+  color: #6D80B2;
+  padding: 30px 20px;
+  max-width: 80%;
+  margin: auto;
+}
+
+#content{
+   max-width: 80%;
+}
+
+
+#quote{
+  text-align: center;
+  font-size: 1.5vw;
+  font-family: Shrikhand, Krylon, HanyiSentyTang, serif;
+  line-height: 1.5;
+  font-variant: small-caps;
+  
+}
+
+
+#gen{
+  padding: 15px 30px;
+  background-color:#6D80B2;
+  border: thin solid #6D80B2;
+  border-radius: 5px;
+  color: white;
+  transition:0.5s;
+  font-size:.6vw;
+  line-height:1;
+  
+  
+}
+
+#gen:hover{
+  background-color:#F1EACD;
+  color: #6D80B2;
+}
+
+#gen::before{
+  content: ' (•̀∀•́ )✧';
+  transition: all .3s;
+}
+
+#gen:hover::before {
+ content:'行け！ (•̀∀•́ )✧';
+}
+
+
+</style>
+  
+  
+  
+  
+  
+  
+<body>
+
+    <div class="wrapper">
+     <div id="content">
+       <p id="quote">
+       Get daily motivation here!
+         <br/> 查看今日份的精神糧食
+       </p>
+     </div>
+      
+     <div id="button-wrapper">
+        <button id="gen" onClick="genQuote()">
+        </button>
+     </div>
+   </div>
+
+<script>
+function genQuote(){
+  var randomNumber = Math.floor (Math.random()* (quotes.length));
+  document.getElementById('quote').innerHTML=quotes[randomNumber];
+}
+
+//quote array
+var quotes = ["\"Stay weird, stay different.\"", "\"不能只有努力，要拼盡全力。\"","爸爸至理名言：\"人生的智慧大家都差不多，但最後比的是心胸。\"","Top Gun:\"Don’t think, just do\"","test3","test4",];
+</script>
+
+
+
+
+
+
+</body>
+</html>
